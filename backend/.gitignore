@@ -1,6 +1,6 @@
-HELP.md
+../HELP.md
 target/
-.mvn/wrapper/maven-wrapper.jar
+backend/.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 
@@ -15,6 +15,7 @@ target/
 
 ### IntelliJ IDEA ###
 .idea
+backend/.idea
 *.iws
 *.iml
 *.ipr
@@ -31,3 +32,14 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Node / Frontend (zaathi folder) ###
+node_modules/
+zaathi/node_modules/
+zaathi/dist/
+zaathi/build/
+
+### Secrets and Keys ###
+zaathi/.env
+.env.local
+.env.*.local
