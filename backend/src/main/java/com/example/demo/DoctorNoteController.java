@@ -8,7 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/doctornotes")
-@CrossOrigin(origins = "http://localhost:3000") // Fixes potential CORS errors
+@CrossOrigin(origins = "https://zaathi.vercel.app/") // Fixes potential CORS errors
 public class DoctorNoteController {
 
     @Autowired

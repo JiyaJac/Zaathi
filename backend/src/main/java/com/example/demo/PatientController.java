@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/patients")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://zaathi.vercel.app/")
 public class PatientController {
 
     @Autowired

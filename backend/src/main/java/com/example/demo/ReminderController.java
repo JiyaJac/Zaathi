@@ -8,7 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/reminders")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://zaathi.vercel.app/")
 public class ReminderController {
 
     @Autowired
