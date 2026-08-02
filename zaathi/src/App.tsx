@@ -31,7 +31,7 @@ const App: React.FC = () => {
     const loadAllData = async () => {
       try {
         // Load Patients
-        const patientsRes = await fetch('http://localhost:8080/api/patients');
+        const patientsRes = await fetch('https://zaathi.onrender.com/api/patients');
         if (patientsRes.ok) {
           const patientsData = await patientsRes.json();
           setPatients(patientsData);
@@ -39,7 +39,7 @@ const App: React.FC = () => {
         }
 
         // Load Medicines
-        const medicinesRes = await fetch('http://localhost:8080/api/medicines');
+        const medicinesRes = await fetch('https://zaathi.onrender.com/api/medicines');
         if (medicinesRes.ok) {
           const medicinesData = await medicinesRes.json();
           setMedicines(medicinesData);
@@ -47,7 +47,7 @@ const App: React.FC = () => {
         }
 
         // Load Reminders
-        const remindersRes = await fetch('http://localhost:8080/api/reminders');
+        const remindersRes = await fetch('https://zaathi.onrender.com/api/reminders');
         if (remindersRes.ok) {
           const remindersData = await remindersRes.json();
           setReminders(remindersData);
@@ -55,7 +55,7 @@ const App: React.FC = () => {
         }
 
         // Load Doctor Notes
-        const notesRes = await fetch('http://localhost:8080/api/doctornotes');
+        const notesRes = await fetch('https://zaathi.onrender.com/api/doctornotes');
         if (notesRes.ok) {
           const notesData = await notesRes.json();
           const notesWithDates = notesData.map((note: any) => ({
@@ -67,7 +67,7 @@ const App: React.FC = () => {
         }
 
         // Load Alerts
-        const alertsRes = await fetch('http://localhost:8080/api/alerts');
+        const alertsRes = await fetch('https://zaathi.onrender.com/api/alerts');
         if (alertsRes.ok) {
           const alertsData = await alertsRes.json();
           const alertsWithDates = alertsData.map((alert: any) => ({
@@ -130,7 +130,7 @@ const App: React.FC = () => {
       console.log("🚀 Sending to backend:", newPatient);
 
       try {
-        const response = await fetch('http://localhost:8080/api/patients', {
+        const response = await fetch('https://zaathi.onrender.com/api/patients', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(newPatient)
@@ -156,7 +156,7 @@ const App: React.FC = () => {
     const p = patients.find(x => x.id === id);
     
     try {
-      const response = await fetch(`http://localhost:8080/api/patients/${id}`, {
+      const response = await fetch(`https://zaathi.onrender.com/api/patients/${id}`, {
         method: 'DELETE',
       });
 
@@ -178,7 +178,7 @@ const App: React.FC = () => {
         console.log("💊 Sending medicine to backend:", newMed);
 
         try {
-          const response = await fetch('http://localhost:8080/api/medicines', {
+          const response = await fetch('https://zaathi.onrender.com/api/medicines', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newMed)
@@ -203,7 +203,7 @@ const App: React.FC = () => {
 
       const handleDeleteMedicine = async (id: string) => {
         try {
-          const response = await fetch(`http://localhost:8080/api/medicines/${id}`, {
+          const response = await fetch(`https://zaathi.onrender.com/api/medicines/${id}`, {
             method: 'DELETE',
           });
 
@@ -226,7 +226,7 @@ const App: React.FC = () => {
       console.log("📋 Sending doctor note to backend:", newNote);
 
       try {
-        const response = await fetch('http://localhost:8080/api/doctornotes', {
+        const response = await fetch('https://zaathi.onrender.com/api/doctornotes', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -296,7 +296,7 @@ const App: React.FC = () => {
         console.log("⏰ Sending reminder to backend:", newReminder);
 
         try {
-          const response = await fetch('http://localhost:8080/api/reminders', {
+          const response = await fetch('http://https://zaathi.onrender.com/api/reminders', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newReminder)
@@ -417,7 +417,7 @@ const App: React.FC = () => {
 
             // Update reminder as completed in backend
             try {
-              const response = await fetch(`http://localhost:8080/api/reminders/${rem.id}`, {
+              const response = await fetch(`https://zaathi.onrender.com/api/reminders/${rem.id}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ ...rem, completed: true })
